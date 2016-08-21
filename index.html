@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slide Menu Web Component</title>
+    <script src="polyfills/skatejs-web-components.js"></script>
+    <script src="dist/rebel-slide-menu.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+        rebel-slide-menu {
+            --font-family: 'Oswald';
+            /*--header-bg-color: #e23f24;*/
+            /*--header-bg-color: #333;*/
+        }
+    </style>
+</head>
+<body>
+    <rebel-slide-menu id="menu"><div slot="test">123</div></rebel-slide-menu>
+    <h1>Page Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <button id="open-menu">Open Menu</button>
+    <script>
+        var $menu = document.querySelector("#menu");
+        document.querySelector("#open-menu").addEventListener("click", function(){
+            if ($menu.isOpen()) {
+                $menu.close();
+            } else {
+                $menu.open();
+            }
+        });
+    </script>
+</body>
+</html>
