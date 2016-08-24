@@ -19,9 +19,10 @@ class RebelSlideMenu extends HTMLElement {
         this.$close = null;
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
-            <style>               
-                * {
-                    font-family: var(--font-family), sans-serif;
+            <style>     
+                .rebel-slide-menu--frame > * {
+                    font-family: sans-serif;
+                    margin: 0;
                 }
                 .rebel-slide-menu--frame {
                     position: fixed;
@@ -44,21 +45,24 @@ class RebelSlideMenu extends HTMLElement {
                     will-change: transform;
                     transition: transform 300ms ease-in;
                 }
-                .rebel-slide-menu--container h2 {
-                    background-color: var(--header-bg-color, #253b7f);
-                    color: var(--header-color, #FFF);
-                    margin: 0;
+                .rebel-slide-menu--container .title {
+                    background-color: #253b7f;
+                    color: #FFF;                   
                     padding: 0 20px;
-                    line-height: 80px;
-                }
-                .rebel-slide-menu--container h2 .close {
-                    float: right;
+                    height: 80px;
+                    line-height: 80px;                   
+                    overflow: hidden;
+                    font-size: 26px;
+                }             
+                .rebel-slide-menu--container .title .close {
+                    position: absolute;
+                    top: -2px;
+                    right: 20px;
                     display: block;
                     width: 100px;
                     text-align: right;
                     font-size: 30px;
                     cursor: pointer;
-                    margin-top: -3px;
                 }
                 .rebel-slide-menu--frame.open {
                     pointer-events: auto;
@@ -67,34 +71,21 @@ class RebelSlideMenu extends HTMLElement {
                 .rebel-slide-menu--frame.open .rebel-slide-menu--container {
                     transform: none;
                 }
-                .rebel-slide-menu--list {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
+                /** For browsers that support CSS variables **/
+                .rebel-slide-menu--frame > * {
+                    font-family: var(--font-family), sans-serif;
                 }
-                .rebel-slide-menu--list li a {
-                    display: block;
-                    line-height: 80px;
-                    text-decoration: none;
-                    padding: 0 20px;
-                    border-bottom: solid 1px rgba(204, 204, 204, 0.25);
-                    color: var(--list-item-color, #333);
-                    transition: color 300ms ease;
-                }
-                .rebel-slide-menu--list li a:hover {
-                    color: var(--list-item-hover-color, #253b7f);
-                }
+                .rebel-slide-menu--container .title {
+                    background-color: var(--header-bg-color, #253b7f);
+                    color: var(--header-color, #FFF);
+                }       
             </style>
             <div class="rebel-slide-menu--frame">
                 <nav class="rebel-slide-menu--container">
-                    <h2>Menu <a class="close">&#10006;</a></h2>
-                    <ul class="rebel-slide-menu--list">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#speakers">SPEAKERS</a></li>
-                        <li><a href="#panel">PANEL</a></li>
-                        <li><a href="#sponsors">SPONSORS</a></li>
-                    </ul>
-                    <slot name="test">Default</slot>
+                    <div class="title"><slot name="title">Menu</slot> <a class="close">&#10006;</a></div>
+                    <div class="rebel-slide-menu--list">
+                        <slot name="content"></slot>
+                    </div>
                 </nav>
             </div>
         `;

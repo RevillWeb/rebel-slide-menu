@@ -9,13 +9,44 @@
         @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
         rebel-slide-menu {
             --font-family: 'Oswald';
-            /*--header-bg-color: #e23f24;*/
-            /*--header-bg-color: #333;*/
+            --header-bg-color: #e23f24;
+        }
+        rebel-slide-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        rebel-slide-menu ul li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            line-height: 80px;
+            padding: 0 20px;
+            border-bottom: solid 1px rgba(204, 204, 204, 0.25);
+            transition: color 300ms ease;
+        }
+        rebel-slide-menu ul li a:visited {
+            color: inherit;
+        }
+        rebel-slide-menu ul li a:hover {
+            color: #e23f24;
+        }
+        /** FOR EDGE/IE which doesn't support CSS variables **/
+        rebel-slide-menu .title {
+            background-color: #e23f24 !important;
         }
     </style>
 </head>
 <body>
-    <rebel-slide-menu id="menu"><div slot="test">123</div></rebel-slide-menu>
+    <rebel-slide-menu id="menu">
+        <span slot="title">Navigation</span>
+        <ul slot="content" class="default">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#speakers">SPEAKERS</a></li>
+            <li><a href="#panel">PANEL</a></li>
+            <li><a href="#sponsors">SPONSORS</a></li>
+        </ul>
+    </rebel-slide-menu>
     <h1>Page Title</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <button id="open-menu">Open Menu</button>
