@@ -1,29 +1,29 @@
 {
   "name": "rebel-slide-menu",
   "version": "0.0.1",
-  "description": "A simple countdown timer ES2015 web component",
-  "main": "dist/countdown-wc.js",
+  "description": "A simple performant slide-in menu provided as a vanilla web component.",
+  "main": "dist/rebel-slide-menu.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RevillWeb/countdown-timer.git"
+    "url": "git+https://github.com/RevillWeb/rebel-slide-menu.git"
   },
   "keywords": [
-    "countdown",
-    "timer",
-    "web",
-    "component",
-    "countdown",
-    "timer"
+    "web component",
+    "vanilla web component",
+    "rebel",
+    "leon revill",
+    "slide-in menu",
+    "menu"
   ],
   "author": "Leon Revill",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RevillWeb/countdown-timer/issues"
+    "url": "https://github.com/RevillWeb/rebel-slide-menu/issues"
   },
-  "homepage": "https://github.com/RevillWeb/countdown-timer#readme",
+  "homepage": "https://github.com/RevillWeb/rebel-slide-menu#readme",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-preset-es2015": "^6.13.2"

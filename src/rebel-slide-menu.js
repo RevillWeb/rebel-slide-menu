@@ -46,8 +46,6 @@ class RebelSlideMenu extends HTMLElement {
                     transition: transform 300ms ease-in;
                 }
                 .rebel-slide-menu--container .title {
-                    background-color: #253b7f;
-                    color: #FFF;                   
                     padding: 0 20px;
                     height: 80px;
                     line-height: 80px;                   
@@ -71,14 +69,14 @@ class RebelSlideMenu extends HTMLElement {
                 .rebel-slide-menu--frame.open .rebel-slide-menu--container {
                     transform: none;
                 }
-                /** For browsers that support CSS variables **/
+                /** For browsers that support CSS custom properties (i.e. IE/EDGE) **/
                 .rebel-slide-menu--frame > * {
                     font-family: var(--font-family), sans-serif;
                 }
                 .rebel-slide-menu--container .title {
                     background-color: var(--header-bg-color, #253b7f);
                     color: var(--header-color, #FFF);
-                }       
+                }    
             </style>
             <div class="rebel-slide-menu--frame">
                 <nav class="rebel-slide-menu--container">
