@@ -13,7 +13,7 @@ To get this web component working in all major browser make sure you include the
 Usage
 =====
 
-There are two ways you can make use of this web component. You can use it as part of a bigger ES2015 project as ES2015 source, or you can include a compiled ES5 version.
+There are two ways you can make use of this web component. You can use it as part of a bigger ES2015 project as ES2015 source, or you can include a transpiled ES5 version.
 
 ES5
 ---
@@ -43,10 +43,103 @@ For ES2015 projects you can install this component directly into your project us
 Then you can include it into your ES2015 project as you would any other module:
 
 ````javascript
-import * as RebelProgressBar from 'node_modules/rebel-slide-menu/src/rebel-slide-menu';
+import * as RebelSlideMenu from 'node_modules/rebel-slide-menu/src/rebel-slide-menu';
 ````
 
-**Note**: *`rebel-slide-menu.js` doesn't actually export anything but an import is required to have the custom element registered on the document.*
+**Note**: *`rebel-slide-menu.js` doesn't actually export anything but an import is required to have the custom element registered.*
+
+API
+====
+
+##`<rebel-slide-menu></rebel-slide-menu>`
+
+This is the only element part of the rebel-slide-menu and is used to include the menu on the page.
+
+###Attributes
+
+Currently this custom element does use any attributes.
+
+###Methods
+
+####`open()`
+
+This method is called to open the slide-in menu.
+
+#####Arguments
+
+This method currently doesn't have any arguments.
+
+#####Returns
+
+`undefined`
+
+#####Example
+
+````
+var $slideMenu = document.querySelector("rebel-slide-menu");
+$slideMenu.open();
+`````
+
+####`close()`
+
+This method is used to close the slide-in menu.
+
+#####Arguments
+
+This method currently doesn't have any arguments.
+
+#####Returns
+
+`undefined`
+
+#####Example
+
+````
+var $slideMenu = document.querySelector("rebel-slide-menu");
+$slideMenu.close();
+`````
+
+####`isOpen()`
+
+This method is used to determine if the menu is already open.
+
+#####Arguments
+
+This method currently doesn't have any arguments.
+
+#####Returns
+
+Boolean: `true|false`
+
+#####Example
+
+````
+var $slideMenu = document.querySelector("rebel-slide-menu");
+if ($slideMenu.isOpen()) {
+    $slideMenu.close();
+} else {   
+    $slideMenu.open();
+}
+`````
+
+####`toggle()`
+
+This method is used to toggle the menu open or cosed.
+
+#####Arguments
+
+This method currently doesn't have any arguments.
+
+#####Returns
+
+`undefined`
+
+#####Example
+
+````
+var $slideMenu = document.querySelector("rebel-slide-menu");   
+$slideMenu.toggle();
+`````
 
 Contributing
 ============

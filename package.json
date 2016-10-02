@@ -1,11 +1,8 @@
 {
   "name": "rebel-slide-menu",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A simple performant slide-in menu provided as a vanilla web component.",
   "main": "dist/rebel-slide-menu.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RevillWeb/rebel-slide-menu.git"
@@ -27,5 +24,8 @@
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-preset-es2015": "^6.13.2"
+  },
+  "scripts": {
+    "transpile": "babel --presets es2015 src/rebel-slide-menu.js --out-file dist/rebel-slide-menu.js"
   }
 }

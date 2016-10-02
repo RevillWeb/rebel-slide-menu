@@ -12,11 +12,8 @@ class RebelSlideMenu extends HTMLElement {
     /**
      * Construct the timer element with some initial markup and styling
      */
-    constructor() {
-        super();
+    connectedCallback() {
         this._open = false;
-        this.$frame = null;
-        this.$close = null;
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
             <style>     
@@ -87,6 +84,12 @@ class RebelSlideMenu extends HTMLElement {
                 </nav>
             </div>
         `;
+        this.$frame = this.shadowRoot.querySelector('.rebel-slide-menu--frame');
+        this.$close = this.shadowRoot.querySelector('.close');
+        this.$close.addEventListener("click", (event) => {
+            event.preventDefault();
+            this.close();
+        });
     }
 
     open() {
@@ -103,18 +106,13 @@ class RebelSlideMenu extends HTMLElement {
         return (this._open === true);
     }
 
-    /**
-     * Method to initiate the interval when the timer is added to the DOM
-     */
-    connectedCallback() {
-        this.$frame = this.shadowRoot.querySelector('.rebel-slide-menu--frame');
-        this.$close = this.shadowRoot.querySelector('.close');
-        this.$close.addEventListener("click", (event) => {
-            event.preventDefault();
+    toggle() {
+        if (this._open === true) {
             this.close();
-        });
+        } else {
+            this.open();
+        }
     }
-
 }
 
 /**
