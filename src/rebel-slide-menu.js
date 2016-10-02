@@ -66,7 +66,7 @@ class RebelSlideMenu extends HTMLElement {
                 .rebel-slide-menu--frame.open .rebel-slide-menu--container {
                     transform: none;
                 }
-                /** For browsers that support CSS custom properties (i.e. IE/EDGE) **/
+                /** For browsers that support CSS custom properties **/
                 .rebel-slide-menu--frame > * {
                     font-family: var(--font-family), sans-serif;
                 }

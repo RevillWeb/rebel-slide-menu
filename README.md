@@ -20,7 +20,7 @@ ES5
 
 You can simple included the compiled version into your project and make use of the custom element `rbl-repeater`.
 
-```javascript
+```html
     <script src="dist/rebel-slide-menu.js"></script>
     <rebel-slide-menu id="menu">
         <span slot="title">Navigation</span>
@@ -42,7 +42,7 @@ For ES2015 projects you can install this component directly into your project us
 
 Then you can include it into your ES2015 project as you would any other module:
 
-````javascript
+```javascript
 import * as RebelSlideMenu from 'node_modules/rebel-slide-menu/src/rebel-slide-menu';
 ````
 
@@ -75,10 +75,10 @@ This method currently doesn't have any arguments.
 
 #####Example
 
-````
+```javascript
 var $slideMenu = document.querySelector("rebel-slide-menu");
 $slideMenu.open();
-`````
+```
 
 ####`close()`
 
@@ -94,10 +94,10 @@ This method currently doesn't have any arguments.
 
 #####Example
 
-````
+```javascript
 var $slideMenu = document.querySelector("rebel-slide-menu");
 $slideMenu.close();
-`````
+```
 
 ####`isOpen()`
 
@@ -113,14 +113,14 @@ Boolean: `true|false`
 
 #####Example
 
-````
+```javascript
 var $slideMenu = document.querySelector("rebel-slide-menu");
 if ($slideMenu.isOpen()) {
     $slideMenu.close();
 } else {   
     $slideMenu.open();
 }
-`````
+```
 
 ####`toggle()`
 
@@ -136,10 +136,61 @@ This method currently doesn't have any arguments.
 
 #####Example
 
-````
+```javascript
 var $slideMenu = document.querySelector("rebel-slide-menu");   
 $slideMenu.toggle();
-`````
+```
+
+Styling
+=======
+
+You can style the content you provide to the slots the same way you would style any other HTML content.
+
+```css
+rebel-slide-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+rebel-slide-menu ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    line-height: 80px;
+    padding: 0 20px;
+    border-bottom: solid 1px rgba(204, 204, 204, 0.25);
+    transition: color 300ms ease;
+}
+rebel-slide-menu ul li a:visited {
+    color: inherit;
+}
+rebel-slide-menu ul li a:hover {
+    color: #253b7f;
+}
+```
+
+For the component mark-up within the Shadow DOM this component makes use of CSS variables making it really easy for you to style the Shadow DOM contents.
+
+##Font (`--font-family`)
+
+To change the font-family simply specify the `--font-family` CSS custom property.
+ 
+```css
+rebel-slide-men {
+    --font-family: 'Open Sans', sans-serif;
+}
+```
+
+##Header (`--header-bg-color` & `--header-color`)
+
+To change the style of the header you can use the `--header-bg-color` & `--header-color` CSS custom properties.
+ 
+```css
+rebel-slide-men {
+    --header-bg-color: #333;
+    --header-color: #CCC;
+}
+```
 
 Contributing
 ============
