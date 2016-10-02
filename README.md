@@ -5,9 +5,9 @@ A simple vanilla web component to provide an easy to use slide-in menu.
 
 - [Demo](http://revillweb.github.io/rebel-slide-menu/)
 
-<center>
-    <img src="http://imageshack.com/a/img923/4575/FMeykO.gif" />
-</center>
+<div align="center">
+    <img src="http://imageshack.com/a/img923/4575/FMeykO.gif" width="225" height="456" />
+</div>
 
 Polyfills
 =====
