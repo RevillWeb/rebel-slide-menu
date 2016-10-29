@@ -1,0 +1,30 @@
+{
+  "name": "rebel-slide-menu",
+  "description": "A simple performant slide-in menu provided as a vanilla web component.",
+  "main": "dist/rebel-slide-menu.js",
+  "authors": [
+    "Leon Revill"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "web",
+    "component",
+    "vanilla",
+    "web",
+    "component",
+    "rebel",
+    "leon",
+    "revill",
+    "slide-in",
+    "menu",
+    "menu"
+  ],
+  "homepage": "https://github.com/RevillWeb/rebel-slide-menu",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
