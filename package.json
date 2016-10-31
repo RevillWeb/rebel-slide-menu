@@ -1,6 +1,6 @@
 {
   "name": "rebel-slide-menu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple performant slide-in menu provided as a vanilla web component.",
   "main": "dist/rebel-slide-menu.js",
   "repository": {
