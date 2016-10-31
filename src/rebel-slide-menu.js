@@ -42,13 +42,21 @@ class RebelSlideMenu extends HTMLElement {
                     will-change: transform;
                     transition: transform 300ms ease-in;
                 }
+                :host([size="small"]) .rebel-slide-menu--container {
+                    max-width: 250px;
+                }
                 .rebel-slide-menu--container .title {
                     padding: 0 20px;
                     height: 80px;
                     line-height: 80px;                   
                     overflow: hidden;
                     font-size: 26px;
-                }             
+                }           
+                :host([size="small"]) .rebel-slide-menu--container .title {
+                    height: 60px;
+                    line-height: 60px;
+                    font-size: 22px;
+                }
                 .rebel-slide-menu--container .title .close {
                     position: absolute;
                     top: -2px;
@@ -59,13 +67,17 @@ class RebelSlideMenu extends HTMLElement {
                     font-size: 30px;
                     cursor: pointer;
                 }
+                :host([size="small"]) .rebel-slide-menu--container .title .close {                   
+                    top: 0;
+                    font-size: 22px;
+                }
                 .rebel-slide-menu--frame.open {
                     pointer-events: auto;
                     background-color: rgba(0, 0, 0, 0.25);
                 }
                 .rebel-slide-menu--frame.open .rebel-slide-menu--container {
                     transform: none;
-                }
+                }               
                 /** For browsers that support CSS custom properties **/
                 .rebel-slide-menu--frame > * {
                     font-family: var(--font-family), sans-serif;
