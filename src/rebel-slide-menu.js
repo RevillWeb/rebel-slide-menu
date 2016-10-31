@@ -97,10 +97,17 @@ class RebelSlideMenu extends HTMLElement {
             </div>
         `;
         this.$frame = this.shadowRoot.querySelector('.rebel-slide-menu--frame');
+        this.$nav = this.shadowRoot.querySelector('.rebel-slide-menu--container');
         this.$close = this.shadowRoot.querySelector('.close');
-        this.$close.addEventListener("click", (event) => {
+        const onClick = (event) => {
             event.preventDefault();
             this.close();
+        };
+        this.$close.addEventListener("click", onClick);
+        this.$frame.addEventListener("click", onClick);
+        this.$nav.addEventListener("click", (event) => {
+            //Prevent the frame close event from firing
+            event.stopImmediatePropagation();
         });
     }
 
