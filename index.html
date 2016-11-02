@@ -30,12 +30,12 @@
         .links {
             text-align: center;
         }
-        rebel-slide-menu ul {
+        rbl-slide-menu ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
-        rebel-slide-menu ul li a {
+        rbl-slide-menu ul li a {
             color: #333;
             text-decoration: none;
             display: block;
@@ -44,10 +44,10 @@
             border-bottom: solid 1px rgba(204, 204, 204, 0.25);
             transition: color 300ms ease;
         }
-        rebel-slide-menu ul li a:visited {
+        rbl-slide-menu ul li a:visited {
             color: inherit;
         }
-        rebel-slide-menu ul li a:hover {
+        rbl-slide-menu ul li a:hover {
             color: #253b7f;
         }
     </style>
@@ -56,7 +56,7 @@
 <body>
     <h1>Rebel Slide Menu</h1>
     <p>A vanilla web component designed to make it super easy to drop a mobile friendly slide-in menu into your website or app.</p>
-    <rebel-slide-menu id="menu">
+    <rbl-slide-menu id="menu" auto-close="300">
         <span slot="title">Navigation</span>
         <ul slot="content" class="default">
             <li><a href="#">HOME</a></li>
@@ -64,7 +64,7 @@
             <li><a href="#contact">CONTACT</a></li>
             <li><a href="#tcs">T & Cs</a></li>
         </ul>
-    </rebel-slide-menu>
+    </rbl-slide-menu>
     <div class="controls">
         <button class="btn">TOGGLE MENU</button>
     </div>

@@ -9,11 +9,9 @@
  * Class which represents the main countdown timer element
  */
 class RebelSlideMenu extends HTMLElement {
-    /**
-     * Construct the timer element with some initial markup and styling
-     */
     connectedCallback() {
         this._open = false;
+        this._autoClose = parseInt(this.getAttribute("auto-close"));
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
             <style>     
@@ -109,6 +107,18 @@ class RebelSlideMenu extends HTMLElement {
             //Prevent the frame close event from firing
             event.stopImmediatePropagation();
         });
+        if (!isNaN(this._autoClose)) {
+            const $slots = this.shadowRoot.querySelectorAll("slot");
+            $slots.forEach(($slot) => {
+                $slot.addEventListener("click", (event) => {
+                    if (event.target.nodeName.toLowerCase() == "a") {
+                        setTimeout(() => {
+                            this.close();
+                        }, this._autoClose);
+                    }
+                });
+            });
+        }
     }
 
     open() {
@@ -137,4 +147,4 @@ class RebelSlideMenu extends HTMLElement {
 /**
  * Define the custom element as countdown-timer using the Custom Elements V1 API
  */
-customElements.define("rebel-slide-menu", RebelSlideMenu);
+customElements.define("rbl-slide-menu", RebelSlideMenu);

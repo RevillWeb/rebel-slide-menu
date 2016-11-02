@@ -26,7 +26,7 @@ You can simple included the compiled version into your project and make use of t
 
 ```html
     <script src="dist/rebel-slide-menu.js"></script>
-    <rebel-slide-menu id="menu">
+    <rbl-slide-menu id="menu">
         <span slot="title">Navigation</span>
         <ul slot="content" class="default">
             <li><a href="#">HOME</a></li>
@@ -34,7 +34,7 @@ You can simple included the compiled version into your project and make use of t
             <li><a href="#contact">CONTACT</a></li>
             <li><a href="#tcs">T & Cs</a></li>
         </ul>
-    </rebel-slide-menu>
+    </rbl-slide-menu>
 ```
 
 ES2015
@@ -55,9 +55,9 @@ import * as RebelSlideMenu from 'node_modules/rebel-slide-menu/src/rebel-slide-m
 API
 ====
 
-##`<rebel-slide-menu></rebel-slide-menu>`
+##`<rbl-slide-menu></rbl-slide-menu>`
 
-This is the only element part of the rebel-slide-menu and is used to include the menu on the page.
+This is the only element part of the rbl-slide-menu and is used to include the menu on the page.
 
 ###Attributes
 
@@ -80,7 +80,7 @@ This method currently doesn't have any arguments.
 #####Example
 
 ```javascript
-var $slideMenu = document.querySelector("rebel-slide-menu");
+var $slideMenu = document.querySelector("rbl-slide-menu");
 $slideMenu.open();
 ```
 
@@ -99,7 +99,7 @@ This method currently doesn't have any arguments.
 #####Example
 
 ```javascript
-var $slideMenu = document.querySelector("rebel-slide-menu");
+var $slideMenu = document.querySelector("rbl-slide-menu");
 $slideMenu.close();
 ```
 
@@ -118,7 +118,7 @@ Boolean: `true|false`
 #####Example
 
 ```javascript
-var $slideMenu = document.querySelector("rebel-slide-menu");
+var $slideMenu = document.querySelector("rbl-slide-menu");
 if ($slideMenu.isOpen()) {
     $slideMenu.close();
 } else {   
@@ -141,7 +141,7 @@ This method currently doesn't have any arguments.
 #####Example
 
 ```javascript
-var $slideMenu = document.querySelector("rebel-slide-menu");   
+var $slideMenu = document.querySelector("rbl-slide-menu");
 $slideMenu.toggle();
 ```
 
@@ -151,12 +151,12 @@ Styling
 You can style the content you provide to the slots the same way you would style any other HTML content.
 
 ```css
-rebel-slide-menu ul {
+rbl-slide-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-rebel-slide-menu ul li a {
+rbl-slide-menu ul li a {
     color: #333;
     text-decoration: none;
     display: block;
@@ -165,10 +165,10 @@ rebel-slide-menu ul li a {
     border-bottom: solid 1px rgba(204, 204, 204, 0.25);
     transition: color 300ms ease;
 }
-rebel-slide-menu ul li a:visited {
+rbl-slide-menu ul li a:visited {
     color: inherit;
 }
-rebel-slide-menu ul li a:hover {
+rbl-slide-menu ul li a:hover {
     color: #253b7f;
 }
 ```
@@ -180,7 +180,7 @@ For the component mark-up within the Shadow DOM this component makes use of CSS 
 To change the font-family simply specify the `--font-family` CSS custom property.
  
 ```css
-rebel-slide-men {
+rbl-slide-menu {
     --font-family: 'Open Sans', sans-serif;
 }
 ```
@@ -190,7 +190,7 @@ rebel-slide-men {
 To change the style of the header you can use the `--header-bg-color` & `--header-color` CSS custom properties.
  
 ```css
-rebel-slide-men {
+rbl-slide-menu {
     --header-bg-color: #333;
     --header-color: #CCC;
 }
